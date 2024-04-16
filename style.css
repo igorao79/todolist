@@ -1,0 +1,155 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Центрирование контейнера по вертикали */
+  height: 100vh;
+}
+
+.container, .factContainer {
+  text-align: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Добавляем тень */
+  width: 80%;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+li span {
+  flex-grow: 1;
+  margin-right: 10px;
+  font-weight: bold; /* Добавляем жирное зачеркивание */
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  max-width: 30ch; /* Ограничение до 30 символов */
+  text-overflow: ellipsis; /* Добавление многоточия в конце, если текст обрезается */
+  overflow: hidden;
+}
+
+button {
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.dateTimeContainer, .factContainer {
+  margin-bottom: 20px;
+}
+
+#dateTime, #factText {
+  font-size: 16px;
+  font-weight: 1000;
+}
+
+.checkBtn, .removeBtn, .moveToTopBtn, .updateFactBtn {
+  padding: 5px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: -1px;
+}
+
+.checkBtn {
+  background-color: #4caf50;
+  color: #fff;
+  margin-top: -1px;
+}
+
+.removeBtn {
+  background-color: #ff5252;
+  color: #fff;
+  margin-top: -1px;
+}
+
+.moveToTopBtn {
+  background-color: #2196f3;
+  color: #fff;
+}
+
+.updateFactBtn {
+  background-color: #333;
+  color: #fff;
+}
+
+li[data-priority="low"] { border-color: #42A5F5; }
+li[data-priority="medium"] { border-color: #FFA726; }
+li[data-priority="high"] { border-color: #EF5350; }
+
+li[data-due-date]:before {
+  content: '\2022'; /* Unicode для точки */
+  margin-right: 5px;
+}
+
+input[type="date"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 1px;
+  font-size: 14px;
+  border: 1px solid black;
+  margin-right: 20px;
+  margin-left: 5px;
+}
+
+select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+@media (max-width: 600px) {
+  input[type="date"], select {
+    display: none;
+  }
+}
+
+/* Новые стили для улучшения дизайна */
+
+h1, h2 {
+  color: #333;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+}
+
+#prioritySelect, #dueDateInput {
+  margin-top: 10px;
+}
+
+/* Добавленные стили для красивого вида кнопок */
+button:hover {
+  filter: brightness(90%);
+}
+
+button:active {
+  filter: brightness(80%);
+}
